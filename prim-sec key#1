@@ -1,0 +1,22 @@
+ use om_db
+  create table om_stud(roll   primary key 
+  , name varchar(40) 
+  , address varchar(40) 
+  , mobno float(40))
+  select * from om_stud
+  insert om_stud values('12','robin','norway','7065436643')
+  insert om_stud values('15','stark','london','4864848446')
+
+  create table om_fees (roll float(40)  ,
+                        total_fees float(40) ,
+                        paid_fees float(40) ,
+						balance float(40) ,
+						constraint fk_roll foreign key (roll)
+						references om_stud(roll)
+						on delete cascade
+						on update cascade
+ 						)
+insert into om_fees values (1, 20000,15000, null),	
+insert into om_fees values (2, 20000,11000, null),	
+
+						
