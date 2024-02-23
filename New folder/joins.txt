@@ -1,0 +1,46 @@
+--joins
+use anjali
+
+select * from emp
+select * from dept
+insert into dept values(40,'IT')
+
+--inner join (equi join)
+select e.ename,e.salary,d.descp
+from emp e,dept d
+where 
+e.dcode = d.dcode 
+
+select e.ename,e.salary,d.descp
+from 
+emp e
+inner join
+dept d
+on e.dcode = d.dcode 
+and salary > 20000
+
+--left outer
+select e.ename,e.salary,d.descp
+from 
+dept d
+left outer join
+emp e
+on e.dcode = d.dcode 
+
+--right outer 
+select e.ename,e.salary,d.descp
+from 
+dept d
+right outer join
+emp e
+on e.dcode = d.dcode  
+
+exec sp_help emp
+
+--cartesian product
+select e.ename,e.salary,d.descp
+from emp e,dept d
+
+select e.ename,e.salary,d.descp
+from dept d,emp e
+
